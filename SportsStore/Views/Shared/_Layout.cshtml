@@ -7,11 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link asp-href-include="~/lib/twitter-bootstrap/**/*.min.css" rel="stylesheet" />
     <link asp-href-exclude="**/*-reboot*,**/*-grid" rel="stylesheet" />
+    <link rel="stylesheet" asp-href-include="~/lib/font-awesome/css/*.css">
 </head>
 <body>
     <div>
         <div class="navbar navbar-inverse bg-inverse" role="navigation">
-            <a href="#" class="navbar-brand">SPORTS STORE</a>
+            <div class="row">
+                <a href="#" class="col navbar-brand">SPORTS STORE</a>
+                <div class="col-4 text-right">
+                    @await Component.InvokeAsync("CartSummary")
+                </div>
+            </div>
         </div>
         <div class="row m-1 p-1">
             <div id="categories" class="col-3">
